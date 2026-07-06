@@ -50,6 +50,7 @@ Both implementations currently target an e-commerce search flow.
   
 ## Project Structure
 
+```text
 performance-testing-jmeter-locust/
 ├── jmeter/
 │   ├── data/
