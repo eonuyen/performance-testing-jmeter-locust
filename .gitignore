@@ -1,0 +1,27 @@
+# Python / Locust
+.venv/
+venv/
+__pycache__/
+*.pyc
+
+# Locust generated reports
+locust/reports/*
+!locust/reports/sample-report/
+!locust/reports/sample-report/**
+
+# JMeter generated files
+jmeter/results/
+jmeter/reports/*
+!jmeter/reports/sample-report/
+!jmeter/reports/sample-report/**
+
+# IDE
+.idea/
+.vscode/
+*.iml
+
+# Operating system
+.DS_Store
+
+# Logs
+*.log

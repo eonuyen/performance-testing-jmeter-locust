@@ -1,0 +1,7 @@
+locust==2.43.4
+beautifulsoup4==4.12.3
+packaging==24.2
+charset-normalizer
+chardet
+gevent==25.9.1
+geventhttpclient
