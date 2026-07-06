@@ -118,10 +118,10 @@ jmeter -v
 
 Use the graphical interface only for reviewing or debugging the test plan:
 
-`
+```bash
 TEST_PLAN=$(find jmeter/test-plans -name "*.jmx" | head -n 1)
 jmeter -t "$TEST_PLAN"
-
+```
 
 ### Run in Non-GUI Mode
 
@@ -129,6 +129,7 @@ Performance tests should normally be executed in non-GUI mode.
 
 From the repository root:
 
+```bash
 rm -rf jmeter/results jmeter/reports/sample-report
 
 mkdir -p jmeter/results
@@ -143,6 +144,7 @@ jmeter \
   -l jmeter/results/results.jtl \
   -e \
   -o jmeter/reports/sample-report
+```
 
 ## Locust Implementation
 
@@ -162,40 +164,48 @@ The Locust scenario includes:
 
 The current Locust scenario uses:
 
-python
+```python
 host = "https://www.n11.com"
 wait_time = between(1, 3)
-
+```
 
 ## Running the Locust Test
 
 ### Create a Virtual Environment
 
 From the repository root:
+
+```bash
 cd locust
 
 python3 -m venv .venv
 source .venv/bin/activate
-
+```
 
 ### Install Dependencies
 
+```bash
 python -m pip install --upgrade pip
 python -m pip install -r requirements.txt
-
+```
 
 ### Run with the Web Interface
 
+```bash
 python -m locust -f locustfile.py
+```
 
 Then open:
 
+```text
 http://localhost:8089
+```
 
 ### Run in Headless Mode
 
 The following command runs a low-volume sample execution and generates HTML and CSV reports:
 
+```bash
 mkdir -p reports/sample-report
 
 python -m locust \
@@ -206,12 +216,15 @@ python -m locust \
   --run-time 30s \
   --html reports/sample-report/report.html \
   --csv reports/sample-report/locust
+```
 
 ## Running a Single Locust User for Debugging
 
 The `locustfile.py` file supports direct single-user debugging:
 
+```bash
 python locustfile.py
+```
 
 This mode prints request status codes, response samples, and search page validation results.
 
@@ -221,15 +234,16 @@ Generated execution data is ignored by Git by default.
 
 Only files placed under the following folders are intended to be committed as portfolio examples:
 
+```text
 jmeter/reports/sample-report/
 locust/reports/sample-report/
+```
 
 This prevents local execution reports from unnecessarily increasing the repository size.
 
 ## Responsible Usage
 
 Load and performance tests can generate significant traffic.
-
 Before running a test:
 
 - Obtain authorization from the system owner.
