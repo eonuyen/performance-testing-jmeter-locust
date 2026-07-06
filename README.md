@@ -67,6 +67,7 @@ performance-testing-jmeter-locust/
 │       └── sample-report/
 ├── .gitignore
 └── README.md
+```
 
 ## JMeter Implementation
 
