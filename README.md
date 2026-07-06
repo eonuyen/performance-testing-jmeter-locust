@@ -50,7 +50,6 @@ Both implementations currently target an e-commerce search flow.
   
 ## Project Structure
 
-```text
 performance-testing-jmeter-locust/
 ├── jmeter/
 │   ├── data/
@@ -90,16 +89,12 @@ The JMeter test plan includes:
 
 Search keywords are stored in:
 
-```text
 jmeter/data/search-data.csv
-```
 
 Current examples:
-```text
 telefon
 laptop
 kulaklık
-```
 
 The test plan reads each value into the `${keyword}` variable.
 
@@ -114,7 +109,6 @@ Install:
 
 Verify the installation:
 
-```bash
 java -version
 jmeter -v
 
